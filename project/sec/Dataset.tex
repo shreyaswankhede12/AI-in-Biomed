@@ -1,0 +1,10 @@
+\section{Dataset and preprocessing}
+The data for this study was carefully curated from a subset of the DEAP dataset, which encompasses EEG recordings from 15 subjects. These individuals participated in experiments designed to capture the electrical activity of their brains via EEG channels, yielding real-time EEG signals. Each subject's data, originally stored in BDF format, was converted to a more manageable NumPy (`.npy`) format for subsequent processing. 
+
+The preprocessing of the EEG data was executed with utmost care, involving the removal of a 3-second baseline period from each 60-second trial. This baseline removal is a critical step to eliminate non-contributory samples and potential noise elements, thus refining the dataset for more precise emotion recognition analyses. Further refinement was achieved by downsampling the EEG signal frequency from 512 Hz to a more computationally manageable 128 Hz. 
+
+It was a crucial step for computational efficiency. The cleaned EEG data was then subjected to a normalization procedure, ensuring that the signal amplitude variations across different subjects and sessions did not bias the analysis. 
+
+To prepare the data for input into the TSception model, it was reshaped according to the dimensions necessitated by the label array for each subject. This reshaping process involved organizing the data into a 4-dimensional array, with the dimensions reflecting the number of trials, channels, samples, and features. The final format of the data was \(40 \times 4\), which aligns with the structured labels array, thereby facilitating a seamless integration into the training process of the model. 
+
+Through this data preparation process, it was ensured that the input to the TSception model was of the highest quality, allowing for the most accurate and reliable emotion recognition outcomes based on the EEG data.
